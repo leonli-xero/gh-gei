@@ -444,7 +444,7 @@ public class MigrateRepoCommandHandler : ICommandHandler<MigrateRepoCommandArgs>
                 throw new OctoshiftCliException("Either --aws-secret-key, --aws-s3-useWebIdentityCredential or AWS_SECRET_KEY environment variable must be set.");
             }
         }
-        else if (args.AwsAccessKey.HasValue() || args.AwsSecretKey.HasValue() || args.UseWebIdentityCredential.HasValue() || args.AwsS3UseSignatureVersion4.HasValue())
+        else if (args.AwsAccessKey.HasValue() || args.AwsSecretKey.HasValue() || args.UseWebIdentityCredential || args.AwsS3UseSignatureVersion4)
         {
             throw new OctoshiftCliException("--aws-access-key, --aws-secret-key, --aws-s3-useWebIdentityCredential and --aws-s3-useSignatureVersion4 can only be provided with --aws-bucket-name.");
         }
